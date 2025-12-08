@@ -1,0 +1,19 @@
+print("Assignment Reminder App")
+print("Type 'done' when you've submitted your assignment.\n")
+
+while True:
+    # Ask if assignment is submitted
+    response = input("Have you submitted your assignment? ")
+    
+    # Check if user has completed the task
+    if response.lower() == "done":
+        print("Great job!!! Assignment submitted! 🎉")
+        break
+    else:
+        # Print friendly reminders based on different responses
+        if response.lower() == "no" or response.lower() == "not yet":
+            print("Still waiting for you ⏳")
+        elif response.lower() == "later" or response.lower() == "soon":
+            print("Submit it already! Is high time ⚠️")
+        else:
+            print("Come on, you can do it! Get that assignment in! 💪")
