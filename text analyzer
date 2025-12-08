@@ -1,0 +1,48 @@
+
+def analyze_text(text):
+    """Return counts: vowels, consonants, digits, spaces, words."""
+    vowels = 0
+    consonants = 0
+    digits = 0
+    spaces = 0
+
+    for ch in text:
+        lower_ch = ch.lower()
+        if lower_ch in 'aeiou':
+            vowels += 1 
+        elif ch.isalpha():         
+            consonants += 1
+        elif ch.isdigit():    
+            digits += 1
+        elif ch == ' ':        
+            spaces += 1
+
+    words = len(text.split())     
+    return vowels, consonants, digits, spaces, words
+
+
+def format_message(name, message):
+    """Return a simple formatted letter string."""
+    return f"Dear {name.upper()},\n\n{message}\n\nWarm regards,\nYour Friend"
+
+
+def main():
+    print("=== Personal Message Formatter & Text Analyzer ===")
+    name = input("Enter recipient name: ")
+    message = input("Enter your message: ")
+
+    v, c, d, s, w = analyze_text(message)
+
+    print("\n--- Text Analysis ---")
+    print("Vowels:", v)
+    print("Consonants:", c)
+    print("Digits:", d)
+    print("Spaces:", s)
+    print("Words:", w)
+
+    print("\n--- Formatted Message ---")
+    print(format_message(name, message))
+
+
+if __name__ == "__main__":
+    main()
